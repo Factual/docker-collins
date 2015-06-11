@@ -20,8 +20,7 @@ RUN echo "Fetching Play 2.2.6" && \
     java -version 2>&1 && \
     PLAY_CMD=/build/play-2.2.6/play ./scripts/package.sh && \
     unzip -q /build/collins/target/collins.zip -d /opt/ && \
-    cd / && rm -rf /build && \
-    chown -R collins /opt/collins
+    cd / && rm -rf /build 
 
 # Add in all the default configs we want in this build so collins can run.
 # Override /opt/collins/conf with your own configs with -v
@@ -32,12 +31,10 @@ RUN cp /build/collins/conf/docker/users.conf           /opt/collins/conf/users.c
 RUN cp /build/collins/conf/docker/profiles.yaml        /opt/collins/conf/profiles.yaml
 RUN cp /build/collins/conf/docker/permissions.yaml     /opt/collins/conf/permissions.yaml
 RUN cp /build/collins/conf/docker/logger.xml           /opt/collins/conf/logger.xml
-COPY required/database.conf.mo        /opt/collins/conf/database.conf.mo
+COPY database.conf.mo	        		       /opt/collins/conf/database.conf.mo
 
-RUN mkdir -p /etc/service/java/
-add required/collins.sh /etc/service/java/run
+RUN mkdir -p /etc/service/collins/
+COPY collins.sh /etc/service/collins/run
 
 WORKDIR /opt/collins
 EXPOSE 9000
-
-CMD ["/sbin/my_init"]
