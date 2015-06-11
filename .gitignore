@@ -1,0 +1,40 @@
+./logs
+project/project
+project/target
+target
+tmp
+dist
+*.swp
+/.idea*
+tags
+*.log
+profileOfH2Tests.html
+test.rb
+*.db
+_site
+RUNNING_PID
+conf/solr/cores/collins/data
+.DS_Store
+Gemfile.lock
+
+.idea
+.idea_modules
+*.iml
+
+# eclipse project files
+.classpath
+.project
+.settings/*
+.externalToolBuilders/
+_includes/*
+.cache
+.tmpBin/
+/bin
+
+#emacs files
+*~
+\#*\#
+
+# jenv java version mgmt
+.java-version
+/.target/
