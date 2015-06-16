@@ -6,6 +6,10 @@ COLLINS_DB_URL=${COLLINS_DB_URL:-localhost}
 
 /usr/bin/mo /opt/collins/conf/database.conf.mo > /opt/collins/conf/database.conf
 
+wget http://resources.prod.factual.com/configs/collins/production.conf -O /opt/collins/conf/production.conf
+wget http://resources.prod.factual.com/configs/collins/authentication.conf -O /opt/collins/conf/authentication.conf
+wget http://resources.prod.factual.com/configs/collins/permissions.yaml -O /opt/collins/conf/permissions.yaml
+
 APP_HOME=/opt/collins
 LOG_HOME=/var/log/collins
 cd $APP_HOME &&

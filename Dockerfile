@@ -25,11 +25,7 @@ RUN echo "Fetching Play 2.2.6" && \
 # Add in all the default configs we want in this build so collins can run.
 # Override /opt/collins/conf with your own configs with -v
 RUN cp /build/collins/conf/docker/validations.conf     /opt/collins/conf/validations.conf
-RUN cp /build/collins/conf/docker/authentication.conf  /opt/collins/conf/authentication.conf
-RUN cp /build/collins/conf/docker/production.conf      /opt/collins/conf/production.conf
-RUN cp /build/collins/conf/docker/users.conf           /opt/collins/conf/users.conf
 RUN cp /build/collins/conf/docker/profiles.yaml        /opt/collins/conf/profiles.yaml
-RUN cp /build/collins/conf/docker/permissions.yaml     /opt/collins/conf/permissions.yaml
 RUN cp /build/collins/conf/docker/logger.xml           /opt/collins/conf/logger.xml
 COPY database.conf.mo	        		       /opt/collins/conf/database.conf.mo
 
