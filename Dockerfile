@@ -24,9 +24,6 @@ RUN echo "Fetching Play 2.3.9" && \
 
 # Add in all the default configs we want in this build so collins can run.
 # Override /opt/collins/conf with your own configs with -v
-RUN cp /build/collins/conf/docker/validations.conf     /opt/collins/conf/validations.conf
-RUN cp /build/collins/conf/docker/profiles.yaml        /opt/collins/conf/profiles.yaml
-RUN cp /build/collins/conf/docker/logger.xml           /opt/collins/conf/logger.xml
 COPY database.conf.mo	        		       /opt/collins/conf/database.conf.mo
 
 RUN mkdir -p /etc/service/collins/

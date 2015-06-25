@@ -9,6 +9,9 @@ COLLINS_DB_URL=${COLLINS_DB_URL:-localhost}
 wget -q http://resources.prod.factual.com/configs/collins/production.conf -O /opt/collins/conf/production.conf
 wget -q http://resources.prod.factual.com/configs/collins/authentication.conf -O /opt/collins/conf/authentication.conf
 wget -q http://resources.prod.factual.com/configs/collins/permissions.yaml -O /opt/collins/conf/permissions.yaml
+wget -q http://resources.prod.factual.com/configs/collins/logger.xml -O /opt/collins/conf/logger.xml
+wget -q http://resources.prod.factual.com/configs/collins/profiles.yaml -O /opt/collins/conf/profiles.yaml
+wget -q http://resources.prod.factual.com/configs/collins/validations.conf -O /opt/collins/conf/validations.conf
 
 
 APP_HOME=/opt/collins
