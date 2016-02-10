@@ -3,7 +3,7 @@
 COLLINS_DB_LOGIN=${COLLINS_DB_LOGIN:-collins}
 COLLINS_DB_PASSWORD=${COLLINS_DB_PASSWORD:-collins}
 COLLINS_DB_URL=${COLLINS_DB_URL:-localhost}
-COLLINS_CONFIG_URL=${http://resources.prod.factual.com/services/collins}
+COLLINS_CONFIG_URL="http://resources.prod.factual.com/services/collins"
 
 /usr/bin/mo /opt/collins/conf/database.conf.mo > /opt/collins/conf/database.conf
 
