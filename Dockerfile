@@ -1,7 +1,7 @@
 FROM factual/docker-base-openjdk
 MAINTAINER Maxime DEVALLAND <maxime@factual.com>
 
-RUN apt-get update && apt-get install -y git zip ipmitool unzip wget && rm -r /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git zip ipmitool unzip wget openjdk-8-jdk openjdk-8-jdk-headless zip unzip ipmitool && rm -r /var/lib/apt/lists/*
 
 RUN useradd -Ur -d /opt/collins collins
 RUN for dir in /build /build/collins /var/log/collins /var/run/collins; do mkdir $dir; done
@@ -14,11 +14,12 @@ WORKDIR /build
 # get Play, Collins, build, and deploy it to /opt/collins
 #COPY collins/ /build/collins/
 RUN echo "Fetching Play 2.3.9" && \
-    wget -q http://downloads.typesafe.com/typesafe-activator/1.3.4/typesafe-activator-1.3.4-minimal.zip -O /build/typesafe-activator-1.3.4-minimal.zip && \
-    unzip -q ./typesafe-activator-1.3.4-minimal.zip && \
+    export ACTIVATOR_VERSION=1.3.7 && \
+    wget -q http://downloads.typesafe.com/typesafe-activator/1.3.4/typesafe-activator-$ACTIVATOR_VERSION-minimal.zip -O /build/activator.zip && \
+    unzip -q ./activator.zip && \
     cd collins && \
     java -version 2>&1 && \
-    PLAY_CMD=/build/activator-1.3.4-minimal/activator ./scripts/package.sh && \
+    PLAY_CMD=/build/activator-$ACTIVATOR_VERSION-minimal/activator ./scripts/package.sh && \
     unzip -q /build/collins/target/collins.zip -d /opt/ && \
     cd / && rm -rf /build 
 
