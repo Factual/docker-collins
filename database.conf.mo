@@ -1,5 +1,5 @@
 # when running in all-in-one mode, just get up and running for people with h2
-evolutionplugin=disables
+evolutionplugin=disabled
 
 db.collins.logStatements=false
 db.collins.password="{{ COLLINS_DB_PASSWORD }}"
