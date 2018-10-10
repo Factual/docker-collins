@@ -1,4 +1,4 @@
-FROM factual/docker-base-openjdk
+FROM factual/docker-base
 MAINTAINER Maxime DEVALLAND <maxime@factual.com>
 
 
