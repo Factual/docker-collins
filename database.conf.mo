@@ -1,5 +1,5 @@
 # when running in all-in-one mode, just get up and running for people with h2
-evolutionplugin=enables
+evolutionplugin=enabled
 applyEvolutions.collins=true
 applyDownEvolutions.collins=true
 
