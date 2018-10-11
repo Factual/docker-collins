@@ -1,5 +1,7 @@
 # when running in all-in-one mode, just get up and running for people with h2
-evolutionplugin=disabled
+evolutionplugin=enables
+applyEvolutions.collins=true
+applyDownEvolutions.collins=true
 
 db.collins.logStatements=false
 db.collins.password="{{ COLLINS_DB_PASSWORD }}"
@@ -9,4 +11,3 @@ db.collins.user="{{ COLLINS_DB_LOGIN }}"
 
 querylog.frontendLogging = true
 # apply evolutions to H2 automatically
-applyEvolutions.collins=true
