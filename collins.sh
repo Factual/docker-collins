@@ -1,8 +1,4 @@
 #!/bin/bash
-
-/usr/bin/mo /opt/collins/conf/database.conf.mo > /opt/collins/conf/database.conf
-
-
 APP_HOME=/opt/collins
 LOG_HOME=/var/log/collins
 cd $APP_HOME &&
