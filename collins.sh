@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# 
 /usr/bin/mo /opt/collins/conf/database.conf.mo > /opt/collins/conf/database.conf
 
 
