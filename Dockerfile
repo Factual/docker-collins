@@ -23,6 +23,7 @@ RUN echo "Fetching Play 2.3.9" && \
     wget -q http://downloads.typesafe.com/typesafe-activator/$ACTIVATOR_VERSION/typesafe-activator-$ACTIVATOR_VERSION-minimal.zip -O /build/activator.zip && \
     unzip -q ./activator.zip && \
     cd collins && \
+    echo "sbt.version=0.13.6" > project/build.properties && \
     java -version 2>&1 && \
     PLAY_CMD=/build/activator-$ACTIVATOR_VERSION-minimal/activator FORCE_BUILD=true ./scripts/package.sh && \
     unzip -q /build/collins/target/collins.zip -d /opt/ && \
