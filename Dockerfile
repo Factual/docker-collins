@@ -1,7 +1,5 @@
 FROM factual/docker-base
-MAINTAINER Maxime DEVALLAND <maxime@factual.com>
-
-
+MAINTAINER <sysops@factual.com>
 
 RUN add-apt-repository ppa:openjdk-r/ppa
 RUN apt-get update && apt-get install -y git zip ipmitool unzip wget openjdk-8-jdk openjdk-8-jdk-headless zip unzip ipmitool && rm -r /var/lib/apt/lists/*
