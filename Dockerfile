@@ -1,5 +1,7 @@
 FROM factual/docker-base
-MAINTAINER <sysops@factual.com>
+MAINTAINER Maxime DEVALLAND <maxime@factual.com>
+
+
 
 RUN add-apt-repository ppa:openjdk-r/ppa
 RUN apt-get update && apt-get install -y git zip ipmitool unzip wget openjdk-8-jdk openjdk-8-jdk-headless zip unzip ipmitool && rm -r /var/lib/apt/lists/*
@@ -13,6 +15,8 @@ ENV LOG_HOME /var/log/collins
 ENV ACTIVATOR_VERSION=1.3.7
 
 RUN git clone https://github.com/tumblr/collins /build/collins
+WORKDIR /build/collins
+RUN git checkout a2619379e9ef57f7f8fcb91a0e83a018b8c4971a
 
 WORKDIR /build
 # get Play, Collins, build, and deploy it to /opt/collins
@@ -29,7 +33,9 @@ RUN echo "Fetching Play 2.3.9" && \
 
 # Add in all the default configs we want in this build so collins can run.
 # Override /opt/collins/conf with your own configs with -v
-RUN mkdir -p /etc/service/collins
+COPY database.conf.mo	        		       /opt/collins/conf/database.conf.mo
+
+RUN mkdir -p /etc/service/collins/
 COPY collins.sh /etc/service/collins/run
 
 WORKDIR /opt/collins
