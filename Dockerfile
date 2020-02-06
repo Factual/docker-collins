@@ -9,7 +9,7 @@ RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/jav
 RUN update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 
 RUN useradd -Ur -d /opt/collins collins
-RUN for dir in /build /build/collins /var/log/collins /var/run/collins; do mkdir $dir; done
+RUN for dir in /build /build/collins /var/log/collins /var/run/collins /etc/service/collins; do mkdir $dir; done
 ENV APP_HOME /opt/collins
 ENV LOG_HOME /var/log/collins
 ENV ACTIVATOR_VERSION=1.3.7
@@ -34,7 +34,7 @@ RUN echo "Fetching Play 2.3.9" && \
 # Add in all the default configs we want in this build so collins can run.
 # Override /opt/collins/conf with your own configs with -v
 
-RUN /busybox/sh mkdir -p /etc/service/collins/
+#RUN /busybox/sh mkdir -p /etc/service/collins/
 COPY collins.sh /etc/service/collins/run
 
 WORKDIR /opt/collins
