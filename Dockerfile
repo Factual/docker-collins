@@ -4,7 +4,7 @@ MAINTAINER Maxime DEVALLAND <maxime@factual.com>
 
 
 RUN add-apt-repository ppa:openjdk-r/ppa
-RUN apt-get update && apt-get install -y git zip ipmitool unzip wget openjdk-8-jdk openjdk-8-jdk-headless zip unzip ipmitool && rm -r /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git zip ipmitool unzip wget openjdk-8-jdk openjdk-8-jdk-headless zip unzip ipmitool && rm -r /var/lib/apt/lists/* bash
 RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 RUN update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 
@@ -34,7 +34,7 @@ RUN echo "Fetching Play 2.3.9" && \
 # Add in all the default configs we want in this build so collins can run.
 # Override /opt/collins/conf with your own configs with -v
 
-RUN bash mkdir -p /etc/service/collins
+RUN mkdir -p /etc/service/collins/
 COPY collins.sh /etc/service/collins/run
 
 WORKDIR /opt/collins
