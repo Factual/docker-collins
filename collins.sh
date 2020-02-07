@@ -1,18 +1,18 @@
 #!/bin/bash
 
-COLLINS_DB_LOGIN=${COLLINS_DB_LOGIN:-collins}
-COLLINS_DB_PASSWORD=${COLLINS_DB_PASSWORD:-collins}
-COLLINS_DB_URL=${COLLINS_DB_URL:-localhost}
-COLLINS_CONFIG_URL="http://resources.prod.factual.com/services/collins"
-
-/usr/bin/mo /opt/collins/conf/database.conf.mo > /opt/collins/conf/database.conf
-
-wget -q ${COLLINS_CONFIG_URL}/production.conf -O /opt/collins/conf/production.conf
-wget -q ${COLLINS_CONFIG_URL}/authentication.conf -O /opt/collins/conf/authentication.conf
-wget -q ${COLLINS_CONFIG_URL}/permissions.yaml -O /opt/collins/conf/permissions.yaml
-wget -q ${COLLINS_CONFIG_URL}/logger.xml -O /opt/collins/conf/logger.xml
-wget -q ${COLLINS_CONFIG_URL}/profiles.yaml -O /opt/collins/conf/profiles.yaml
-wget -q ${COLLINS_CONFIG_URL}/validations.conf -O /opt/collins/conf/validations.conf
+#COLLINS_DB_LOGIN=${COLLINS_DB_LOGIN:-collins}
+#COLLINS_DB_PASSWORD=${COLLINS_DB_PASSWORD:-collins}
+#COLLINS_DB_URL=${COLLINS_DB_URL:-localhost}
+#COLLINS_CONFIG_URL="http://resources.prod.factual.com/services/collins"
+#
+#/usr/bin/mo /opt/collins/conf/database.conf.mo > /opt/collins/conf/database.conf
+#
+#wget -q ${COLLINS_CONFIG_URL}/production.conf -O /opt/collins/conf/production.conf
+#wget -q ${COLLINS_CONFIG_URL}/authentication.conf -O /opt/collins/conf/authentication.conf
+#wget -q ${COLLINS_CONFIG_URL}/permissions.yaml -O /opt/collins/conf/permissions.yaml
+#wget -q ${COLLINS_CONFIG_URL}/logger.xml -O /opt/collins/conf/logger.xml
+#wget -q ${COLLINS_CONFIG_URL}/profiles.yaml -O /opt/collins/conf/profiles.yaml
+#wget -q ${COLLINS_CONFIG_URL}/validations.conf -O /opt/collins/conf/validations.conf
 
 
 APP_HOME=/opt/collins
